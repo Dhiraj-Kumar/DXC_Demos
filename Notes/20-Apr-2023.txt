@@ -1,0 +1,62 @@
+//Decision Making Constructs in C#
+//1. If... Else
+//2. Switch...Case
+//Arithmetic Operators - +,-,*,/,%
+//Comparison Operators - ==,<,>,<=,>=,!=
+int num;
+Console.WriteLine("Enter Any Number");
+num = Convert.ToInt16(Console.ReadLine());
+if (num % 2 == 0)
+{
+    Console.WriteLine("Number is Even");
+}
+else
+{
+    Console.WriteLine("Number is Odd");
+}
+---------------------------------------------------------
+int num1, num2;
+Console.WriteLine("Enter First Number");
+num1 = Convert.ToInt16(Console.ReadLine());
+Console.WriteLine("Enter Second Number");
+num2 = Convert.ToInt16(Console.ReadLine());
+if (num1 > num2)
+{
+    Console.WriteLine("First Number is Greater");
+}
+else if (num2 > num1)
+{
+    Console.WriteLine("Second Number is Greater");
+}
+else
+{
+    Console.WriteLine("Both are equal");
+}
+----------------------------------------------------------
+//Logical Operatos - &&, ||, !
+//Age>=18 and qualification>=10
+Console.WriteLine("Enter Your Age");
+int age = Convert.ToInt16(Console.ReadLine());
+Console.WriteLine("Enter Your Qualification");
+int qual = Convert.ToInt16(Console.ReadLine());
+if(age>=18 && qual >= 10)
+{
+    Console.WriteLine("You are eligible");
+}
+else
+{
+    Console.WriteLine("You are not eligible");
+}
+--------------------------------------------------
+L.H.S	&&	R.H.S	RESULT
+T		F	F
+F		T	F
+T		T	T
+F		F	F
+
+L.H.S	||	R.H.S	RESULT
+T		F	T
+F		T	T
+T		T	T
+F		F	F
+---------------------------------------------------
