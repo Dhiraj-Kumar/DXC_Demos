@@ -1,0 +1,120 @@
+int[] arr = new int[5];
+arr[0] = 10;
+
+
+int[] arr2 = { 10, 20, 30 };
+
+int[] arr3 = new int[] { 10, 20, 30, 40 };
+
+//Multi Dimensional Array
+int[,] num = new int[2, 3];
+
+num[0, 0] = 10;
+num[0, 1] = 20;
+
+int[,] num2 = new int[,] { { 1, 2, 3 }, { 5, 6, 7 } };
+
+for (int i = 0; i < 2; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        Console.Write($"{num2[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+int[,] num3 = { { 10, 20 }, { 30, 40 } };
+
+// Jagged Array
+int[][] jagArr = new int[3][];
+jagArr[0] = new int[] { 10, 20, 30 };
+jagArr[1] = new int[] { 1, 2 };
+jagArr[2] = new int[] { 5, 6, 7, 8 };
+
+for (int i = 0; i < jagArr.Length; i++)
+{
+    for (int j = 0; j < jagArr[i].Length; j++)
+    {
+        Console.Write(jagArr[i][j] + " ");
+    }
+    Console.WriteLine();
+}
+
+//int[] arr1 = new int[5];
+
+//for (int i = 0; i < arr1.Length; i++)
+//{
+//    arr1[i] = Convert.ToInt16(Console.ReadLine());
+//}
+
+//foreach (int item in arr1)
+//{
+//    Console.WriteLine(item);
+//}
+
+//for(int j = 0; j < arr1.Length; j++)
+//{
+//    Console.WriteLine(arr1[j]);
+//}
+
+----------------------------------------------------------------------------------------------------------
+Exercise 1:-
+Write a program for displaying the largest number of the given array {7,4,5,6,8,2,3,1}.
+
+Exercise 2:-
+Write a program to display the element that occurs most frequently in the given array {7,7,7,7,8,8,8,5,5,5,5,6,6,6,6,}.
+
+Exercise 3:-
+Write a program to count duplicate values in an array of size 10.
+
+Exercise 4:-
+Write a program to calculate the average of the elements in the given array of size 10. All values must be accepted from user.
+
+---------------------------------------------------------------------------------------------------------------
+Problem Statement
+The bookworm is the latest craze in the word puzzle game world. The players connect the letter to form words; the words formed gain the player points.
+
+The initial step in building up the game programmatically is to explore Strings and their functionality. To enable us to get familiar with Strings, the various searching and sorting techniques on them, we will write a C# program.
+
+The words that will be fed to the bookworm are taken from the user as input one after another
+
+a) Write a C# program to get the strings as input from the user and push them to an array. Find the shortest word in the list of Strings and output the same on screen.
+
+Sample Input
+
+Enter the number of words: 
+5
+Enter the words
+Bangalore
+Mumbai
+Kolkata
+Delhi
+Chennai > **Sample Output**
+
+The shortest word is : Delhi
+b) Write a C# program that gets a word from the user and checks if the word is present in the list of words already stored in the array or not.
+
+Sample Input
+
+Enter a word to search: 
+Delhi
+Sample Output
+
+The word is present in the list 
+
+c) Write a C# program to sort all of the words in the list in alphabetical order and display > 
+
+**Sample Output**
+The sorted array is: 
+1.	Bangalore
+2.	Chennai
+3.	Delhi
+4.	Kolkata
+5.	Mumbai
+
+d) Find if any of the words in the list is a palindrome or not, print their count and the words.
+
+Sample Output
+
+The number of palindromes in the list : 1
+Madam
