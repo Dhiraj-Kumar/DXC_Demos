@@ -11,7 +11,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {   
             Product[] products = new Product[10];
             products[0] = new Product() { Id = 1, Name = "Laptop", Brand = "Dell", Quantity = 5, Price = 35000 };
             products[1] = new Product() { Id = 2, Name = "Camera", Brand = "Canon", Quantity = 7, Price = 45000 };
