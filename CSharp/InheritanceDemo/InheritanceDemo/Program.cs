@@ -2,6 +2,7 @@
 {
     class Calculator
     {
+        protected string name;
         public Calculator()
         {
             Console.WriteLine("This is calculator class");
@@ -22,14 +23,24 @@
         {
             return a * b;
         }
+
+        public void Show()
+        {
+            Console.WriteLine("This is show method");
+        }
     }
 
     class ScientificCalculator : Calculator
     {
-        public ScientificCalculator()
+        public ScientificCalculator() : base(10)
         {
-
+            name = "John";
             Console.WriteLine("This is ScientificCalculator class");
+        }
+
+        public new void Show()
+        {
+            Console.WriteLine("This is show method of SciCalculator class");
         }
         public int Square(int x)
         {
