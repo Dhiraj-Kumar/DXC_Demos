@@ -1,0 +1,80 @@
+namespace InterfaceDemo
+{
+    interface IMyInterface
+    {
+        void Sum(int a, int b);
+        void Multiply(int a, int b);
+    }
+    interface IMyInterface2
+    {
+        void Cube(int x);
+    }
+    class Demo
+    {
+        public void Show()
+        {
+            Console.WriteLine("This is show");
+        }
+    }
+        
+    class Class1 : Demo, IMyInterface, IMyInterface2
+    {
+        public void Sum(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+        public void Multiply(int a, int b)
+        {
+            Console.WriteLine(a * b);
+        }
+        public void Cube(int a)
+        {
+            Console.WriteLine(a * a * a);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+namespace GenericsDemo
+{
+    class Demo<T>
+    {
+        T num;
+        public void SetValue(T x)
+        {
+            num = x;
+        }
+        public T GetValue()
+        {
+            return num;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Demo<int> obj = new Demo<int>();
+            obj.SetValue(10);
+            Console.WriteLine(obj.GetValue());
+
+            Demo<string> obj2 = new Demo<string>();
+            obj2.SetValue("Hello");
+            Console.WriteLine(obj2.GetValue());
+        }
+    }
+}
+--------------------------------------------------------------------------
+Create a C# program that implements an IVehiculo interface with two methods, one for Drive of type void and another for Refuel of type bool that has a parameter of type integer with the amount of gasoline to refuel. Then create a Car class with a builder that receives a parameter with the car's starting gasoline amount and implements the Drive and Refuel methods of the car.
+
+The Drive method will print on the screen that the car is Driving, if the gasoline is greater than 0. The Refuel method will increase the gasoline of the car and return true.
+
+To carry out the tests, create an object of type Car with 0 of gasoline in the Main of the program and ask the user for an amount of gasoline to refuel, finally execute the Drive method of the car.
+------------------------------------------------------------------------------------------------
+Create a Custom Generic C# class named MyStack. This class should contain Push, Pop methods and Count property. Push Method should Take only class object as argument and should create an in memory stack representation of given object type (Use Arrays). Pop method should remove and return the object in top of the stack. Count property should hold number of object in the Stack.
+----------------------------------------------------------------------------------------------

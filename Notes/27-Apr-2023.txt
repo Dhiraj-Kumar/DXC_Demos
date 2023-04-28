@@ -1,0 +1,133 @@
+namespace PolymorphismDemo
+{
+    class Demo
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+
+        public void Add(int a, int b, int c)
+        {
+            Console.WriteLine(a + b + c);
+        }
+
+        public void Add(string a, string b)
+        {
+            Console.WriteLine(a + b);
+        }
+
+        public void Add(int a, float b)
+        {
+            Console.WriteLine(a + b);
+        }
+
+        public void Add(float x, int y)
+        {
+            Console.WriteLine(x + y);
+        }
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Demo d = new Demo();
+            d.Add(10, 20);
+            d.Add(10, 20, 30);
+            d.Add("Hello", "World");
+            d.Add(10, 2.5f);
+            d.Add(3.4f, 20);
+        }
+    }
+}
+------------------------------------------------------------------------
+namespace PolymorphismDemo
+{
+    class Class1
+    {
+        public virtual void Print()
+        {
+            Console.WriteLine("Welcome");
+        }
+
+        public virtual void Calculate(int x, int y)
+        {
+            Console.WriteLine(x + y);
+        }
+    }
+    class Class2 : Class1
+    {
+        public override void Print()
+        {
+            Console.WriteLine("Good Morning");
+        }
+
+        public override void Calculate(int x, int y)
+        {
+            Console.WriteLine(x * y);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Class2 obj = new Class2();
+            obj.Print();
+        }
+    }
+}
+-----------------------------------------------------------------------------
+namespace PolymorphismDemo
+{
+    abstract class Class1
+    {
+        public abstract void Add(int a, int b);
+        public abstract void Subtract(int a, int b);
+    }
+    class Class2 : Class1
+    {
+        public override void Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+        public override void Subtract(int a, int b)
+        {
+            Console.WriteLine(a - b);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+---------------------------------------------------------------------------
+namespace PolymorphismDemo
+{
+    class Person
+    {
+        public virtual void Show()
+        {
+            Console.WriteLine("This is show method of Person class");
+        }
+    }
+    class Student : Person
+    {
+        public override void Show()
+        {
+            Console.WriteLine("This is show method of Student class");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Person p = new Student();
+            p.Show();
+        }
+    }
+}
+------------------------------------------------------------------------------
