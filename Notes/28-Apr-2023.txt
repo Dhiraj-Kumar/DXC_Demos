@@ -78,3 +78,133 @@ To carry out the tests, create an object of type Car with 0 of gasoline in the M
 ------------------------------------------------------------------------------------------------
 Create a Custom Generic C# class named MyStack. This class should contain Push, Pop methods and Count property. Push Method should Take only class object as argument and should create an in memory stack representation of given object type (Use Arrays). Pop method should remove and return the object in top of the stack. Count property should hold number of object in the Stack.
 ----------------------------------------------------------------------------------------------
+using System.Collections;
+
+namespace CollectionsDemo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList list = new ArrayList();
+            list.Add(10);
+            list.Add(20);
+            list.Add("Hello");
+            list.Add(2.5f);
+            list.Add(true);
+
+            foreach(var i in list) 
+            {
+                Console.WriteLine(i);
+            }
+
+            list.Insert(2, "World");
+
+            Console.WriteLine("After Insert");
+            foreach (var i in list)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine(list.Count);
+        }
+    }
+}
+----------------------------------------------------------------------------------
+ArrayList list = new ArrayList();
+            list.Add(10);
+            list.Add(20);
+            list.Add("Hello");
+            list.Add(2.5f);
+            list.Add(true);
+
+            Console.WriteLine(list[2]);
+-----------------------------------------------------------------------
+using System.Collections;
+
+namespace CollectionsDemo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack s = new Stack();
+            s.Push(10);
+            s.Push(20);
+            s.Push(30);
+            s.Push(40);
+
+            Console.WriteLine(s.Contains(30));
+
+            foreach (var item in s)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("After Remove with Pop Method");
+            Console.WriteLine($"{s.Pop()} is popped out");
+            foreach (var item in s)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------
+using System.Collections;
+
+namespace CollectionsDemo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue q = new Queue();
+            q.Enqueue(10);
+            q.Enqueue(20);
+            q.Enqueue(30);
+            q.Enqueue(40);
+
+            foreach (var item in q)
+            {
+                Console.WriteLine(item);
+            }
+
+            q.Dequeue();
+            Console.WriteLine("After removing");
+            foreach (var item in q)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+    }
+}
+--------------------------------------------------------------------
+using System.Collections;
+
+namespace CollectionsDemo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SortedList list = new SortedList();
+            list.Add(4, "Four");
+            list.Add(1, "One");
+            list.Add(3, "Three");
+            list.Add(2, "Two");
+            list.Add(5, "Five");
+
+            //Console.WriteLine(list[3]);
+            Console.WriteLine(list.GetKey(1));
+
+            foreach (var item in list.Keys)
+            {
+                Console.WriteLine($"Key: {item}, Value: {list[item]}");
+            }
+
+        }
+    }
+}
+
