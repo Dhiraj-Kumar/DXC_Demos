@@ -1,0 +1,31 @@
+namespace LinqDemo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Step 1. Define DataSource
+            string[] fruits = { "Apple", "Banana", "Mango", "Cherry", "Avacado", "Grapes", "Lichi", "Watermelon", "Guava", "Pineapple" };
+
+            //foreach (var item in fruits)
+            //{
+            //    if (item.StartsWith('A'))
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+            //}
+
+            //Step 2. Write Query
+            //var query = from x in fruits where x.StartsWith('A') select x;
+            //var query = from x in fruits where x.Length % 2 == 0 select x;
+            var query = from x in fruits orderby x descending select x;
+
+            //Step 3. Execute Query
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
