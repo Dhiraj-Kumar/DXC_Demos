@@ -54,3 +54,33 @@ Alter Table Orders drop constraint FK__Orders__Customer__3B75D760
 
 -- Adding foriegn key on orders table using alter statement
 Alter Table Orders add constraint fk1 foreign key(CustomerId) references Customers(CustomerId)
+
+/*
+Parts of SQL
+
+1. DDL - Data Definition Language
+	Create, Alter, Drop
+2. DML - Data Manipulation Language
+	Insert, Update, Delete
+3. DCL - Data Control Language
+	Grant, Revoke
+4. DQL - Data Query Language
+	Select
+*/
+
+-- DML Statements
+-- Inserting data into customers table
+Insert into Customers values (1, 'John', 'John@gmail.com', 'New Delhi', 25)
+Insert into Customers (CustomerId, Email, CustomerName, Age, City) values (2, 'James@gmail.com', 'James', 30, 'Mumbai')
+
+-- Partial Insert
+Insert into Customers (CustomerId, CustomerName, Email, Age) values (3, 'Peter', 'Peter@gmail.com', 28)
+
+-- Inserting multiple records
+Insert into Customers values (4, 'Steve', 'Steve@gmail.com', 'Chennai', 27),(5, 'Maria', 'Maria@gmail.com', 'Kolkata', 25)
+
+-- Modifying record using Update statement
+
+
+
+Select * from Customers
