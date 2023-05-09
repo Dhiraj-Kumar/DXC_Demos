@@ -72,3 +72,30 @@ Customers.CustomerID=Orders.CustomerID
 -- Self Join
 Select * from Emp
 Select Emp.EmpName, Emp2.EmpName as ReportsTo from Emp inner join Emp as Emp2 on Emp.MgrId = Emp2.EmpId
+
+-- Subqueries
+Select * from Students
+
+Select StudentName from Students where Marks = (Select Max(Marks) from Students)
+
+Select * from Students where Marks = (Select Max(Marks) from Students where Marks<(Select MAX(Marks) from Students))
+
+Select * from Students order by Marks Desc
+Select * from Students order by Marks Desc offset 3 rows fetch next 1 rows only
+
+
+/*
+Write the queries to carry out the below listed operations:
+
+Fetch the row from User table with Id=112233 and Password=’Maya1214’.
+Fetch all the rows from Note table with note_creation_date=’01/31/2019’.
+Fetch all the Categories created after ‘01/22/2019’.
+Fetch all category details which belongs to note with note id=1.
+Fetch all the Notes from the Note table with userId=112244.
+Fetch all the Notes from the Note table for category_id=1.
+Fetch all the reminder details for note id=2.
+Write a query to change the note_status to ‘Completed’ with note Id=3.
+Write a query to set a reminder of type ‘Personal Reminders’ for Note with note id=1. [Find reminder id based upon reminder_type]
+Write a query to remove all reminders from Note with note_id=2.
+
+*/
