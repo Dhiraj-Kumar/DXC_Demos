@@ -1,0 +1,33 @@
+ADO.Net - Activex Data Object - Data Access Technology
+
+Types of Architecture
+1. Connected
+2. Disconnected
+
+System.Data.SqlClient
+
+SqlConnection - Establish connection with database
+SqlCommand - To send an sql command and execute on database server
+SqlDataReader - To read data from database
+SqlDataAdapter - Can be used for implementing disconnected architecture with dataset
+
+Windows Authentication Connection String
+"Data Source=DHIRAJ-PC\\SQLEXPRESS; Initial Catalog=Northwind; Integrated Security=true"
+"Server=DHIRAJ-PC\\SQLEXPRESS; database=Northwind; Integrated Security=true"
+
+SQL Authentication Connection String
+"Data Source=DHIRAJ-PC\\SQLEXPRESS; Initial Catalog=Northwind; User Id=sa; password=pass@123"
+"Server=DHIRAJ-PC\\SQLEXPRESS; database=Northwind; User Id=sa; password=pass@123"
+
+Enter Table Name: Products
+Enter Search Column Name: ProductId
+Enter Search Value: 1
+
+
+
+
+
+
+
+
+
