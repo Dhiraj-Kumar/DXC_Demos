@@ -1,0 +1,79 @@
+using System.Data;
+using System.Data.SqlClient;
+
+namespace FirstApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection con = new SqlConnection("Server=DHIRAJ-PC\\SQLEXPRESS; database=Northwind; Integrated Security=true");
+            SqlDataAdapter adp = new SqlDataAdapter("Select * from Customers", con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds, "CustTable");
+            //for (int i = 0; i < ds.Tables["CustTable"].Rows.Count; i++)
+            //{
+            //    for (int j = 0; j < ds.Tables["CustTable"].Columns.Count; j++)
+            //    {
+            //        Console.Write($"{ds.Tables["CustTable"].Rows[i][j]} | ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            SqlDataAdapter adp2 = new SqlDataAdapter("Select * from Products", con);
+            adp2.Fill(ds, "ProductTable");
+            Console.WriteLine(ds.Tables.Count);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+using System.Data;
+using System.Data.SqlClient;
+
+namespace FirstApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection con = new SqlConnection("Server=DHIRAJ-PC\\SQLEXPRESS; database=TestDB; Integrated Security=true");
+            SqlDataAdapter adp = new SqlDataAdapter("Select * from Products", con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            var row = ds.Tables[0].NewRow();
+            row["ProductId"] = 2;
+            row["ProductName"] = "Tablet";
+            row["Brand"] = "Lenovo";
+            row["Quantity"] = 7;
+            row["Price"] = 15000;
+            
+            ds.Tables[0].Rows.Add(row);
+
+            SqlCommandBuilder builder = new SqlCommandBuilder(adp);
+            adp.Update(ds);
+            Console.WriteLine("Database Updated");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+using System.Data;
+using System.Data.SqlClient;
+
+namespace FirstApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection con = new SqlConnection("Server=DHIRAJ-PC\\SQLEXPRESS; database=TestDB; Integrated Security=true");
+            SqlDataAdapter adp = new SqlDataAdapter("Select * from Products where ProductId=1", con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            ds.Tables[0].Rows[0][2] = "Apple";
+
+            SqlCommandBuilder builder = new SqlCommandBuilder(adp);
+            adp.Update(ds);
+            Console.WriteLine("Database Updated");
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
