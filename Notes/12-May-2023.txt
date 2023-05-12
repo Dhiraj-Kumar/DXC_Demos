@@ -1,0 +1,69 @@
+using Spectre.Console;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace SpectreApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection con = new SqlConnection("Server=.\\SQLEXPRESS;Database=Northwind;Integrated Security=true");
+            SqlDataAdapter adp = new SqlDataAdapter("Select * from Customers", con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            var table = new Table();
+            table.AddColumn("CustomerId");
+            table.AddColumn("ContactName");
+            table.AddColumn("ContactTitle");
+            table.AddColumn("Address");
+            table.AddColumn("City");
+            table.AddColumn("Country");
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                table.AddRow(ds.Tables[0].Rows[i][0].ToString(), ds.Tables[0].Rows[i][1].ToString(), ds.Tables[0].Rows[i][2].ToString(), ds.Tables[0].Rows[i][3].ToString(), ds.Tables[0].Rows[i][4].ToString(), ds.Tables[0].Rows[i][5].ToString());
+            }
+
+            AnsiConsole.Write(new FigletText("Customer Details").Centered().Color(Color.Red));
+            //var name = AnsiConsole.Ask<string>("Which Customer you would like to [green]search[/]?");
+            AnsiConsole.Write(table);
+
+        }
+    }
+}
+--------------------------------------------------------------------------
+using Spectre.Console;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace SpectreApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection con = new SqlConnection("Server=.\\SQLEXPRESS;Database=Northwind;Integrated Security=true");
+            SqlCommand cmd = new SqlCommand("Select * from Customers", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            
+            var table = new Table();
+            table.AddColumn("CustomerId");
+            table.AddColumn("ContactName");
+            table.AddColumn("ContactTitle");
+            table.AddColumn("Address");
+            table.AddColumn("City");
+            table.AddColumn("Country");
+            while(dr.Read())
+            {
+                table.AddRow(dr["CustomerId"].ToString(), dr["ContactName"].ToString(), dr["ContactTitle"].ToString(), dr["Address"].ToString(), dr["City"].ToString(), dr["Country"].ToString());
+            }
+            con.Close();
+            AnsiConsole.Write(new FigletText("Customer Details").Centered().Color(Color.Red));
+            //var name = AnsiConsole.Ask<string>("Which Customer you would like to [green]search[/]?");
+            AnsiConsole.Write(table);
+
+        }
+    }
+}
+-----------------------------------------------------------------------
