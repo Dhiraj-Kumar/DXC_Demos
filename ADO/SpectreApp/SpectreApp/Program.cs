@@ -17,6 +17,8 @@ namespace SpectreApp
                         "Check Balance"
             }));
             Console.WriteLine($"You selected {choice}");
+            DataView dv = new DataView();
+            
         }
     }
 }

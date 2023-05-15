@@ -1,0 +1,39 @@
+----Welcome to Product Management App----
+1. Add New Product
+2. Get Product
+3. Get All Products
+4. Update Product
+5. Delete Product
+
+Enter Your Choice: 1
+
+Product Name:
+Product Description:
+Quantity:
+Price:
+
+2
+----------------------------
+Enter Product ID: 2
+//Display product details
+
+----------------------------
+3
+----------------------------
+//Display all product information
+
+4
+----------------------------
+Enter Product ID: 2
+Product Name:
+Product Description:
+Quantity:
+Price:
+
+Product Updated
+
+5
+----------------------------
+Enter Product ID: 2
+
+Product Deleted
