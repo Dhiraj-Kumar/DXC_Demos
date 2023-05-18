@@ -1,0 +1,18 @@
+Library Management System
+
+- Login User
+- Add book details
+- Edit books details
+- Delete books details
+- Add student details
+- Edit student details
+- Delete student details
+- Issue book to student (One book at a time can be issued)
+- Return books from student and add in available stock
+- Search books based on Author Name or Publication Name
+- Search student based on Student Roll No
+- We can see that how many student have books right now
+
+Develop a C# Console Application based on above requirements.
+Handle all appropriate exceptions
+Write Unit Test cases using NUnit/xUnit
