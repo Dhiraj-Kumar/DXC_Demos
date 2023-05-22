@@ -4,11 +4,11 @@ namespace BookStore
 {
     public class Program
     {
-        private readonly IBookRepository _bookRepository;
+        private readonly IBookService _bookService;
 
-        public Program(IBookRepository bookRepository)
+        public Program(IBookService bookService)
         {
-            _bookRepository = bookRepository;
+            _bookService = bookService;
         }
 
         public int Run()
@@ -19,16 +19,18 @@ namespace BookStore
             string author = Console.ReadLine();
             Console.WriteLine("Enter Book Price");
             int price = Convert.ToInt16(Console.ReadLine());
-            return _bookRepository.AddBook(name, author, price);
+            return _bookService.AddBook(name, author, price);
+            
         }
 
         static void Main(string[] args)
         {
-            //var container = new UnityContainer();
-            //container.RegisterType<IBookRepository, BookRepository>();
+            var container = new UnityContainer();
+            container.RegisterType<IBookRepository, BookRepository>();
+            container.RegisterType<IBookService, BookService>();
 
-            //var program = container.Resolve<Program>();
-            //program.Run();
+            var program = container.Resolve<Program>();
+            program.Run();
         }
     }
 }
